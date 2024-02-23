@@ -3,7 +3,7 @@
   "builds": [
     {
       "src": "tsconfig.json",
-      "use": "@vercel/nuxt"
+      "use": "@vercel/node"
     }
   ],
   "routes": [
