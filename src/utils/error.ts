@@ -57,12 +57,6 @@ export const handleError = (err: Error, res: Response) => {
         )
     } else {
         logger.error(JSON.stringify(err))
-        if (config.isProduction()) {
-            res.status(Errors.Sensitive.status).send(
-                new ResponseWrapper(null, Errors.Sensitive)
-            )
-            return
-        }
         const errResp = new ErrorResp(
             Errors.InternalServerError.code,
             JSON.stringify(err),
